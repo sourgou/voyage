@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agence de Voyage - Explorez le Monde</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    /* Style général */
+    body {
+      font-family: 'Open Sans', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Header */
+    header {
+      background: #2c3e50;
+      color: #fff;
+      padding: 1rem 0;
+      text-align: center;
+    }
+
+    header nav a {
+      margin: 0 15px;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    header nav a:hover {
+      color: #1abc9c;
+    }
+
+    /* Hero section */
+    #hero {
+      background: url('https://media.istockphoto.com/id/1177381806/fr/photo/concept-de-fond-de-vacances-d%C3%A9t%C3%A9-de-voyage.jpg?s=612x612&w=0&k=20&c=J3ByARrLvMhnUU5nBQR7-HEiYnOfEEDJWif_OWVYbvk=') no-repeat center center/cover;
+      height: 400px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      text-align: center;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    #hero p {
+      font-size: 1.5rem;
+      margin: 10px 0;
+    }
+
+    #hero .btn {
+      background: #1abc9c;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #hero .btn:hover {
+      background: #16a085;
+    }
+
+    /* Destinations */
+    #destinations {
+      padding: 2rem;
+      text-align: center;
+    }
+
+    #destinations h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: 1rem;
+      width: 300px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      font-size: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .card p {
+      padding: 0 1rem;
+      color: #666;
+    }
+
+    .card .btn {
+      display: block;
+      background: #1abc9c;
+      color: #fff;
+      padding: 10px;
+      margin: 1rem;
+      text-align: center;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .card .btn:hover {
+      background: #16a085;
+    }
+
+    /* Footer */
+    footer {
+      background: #2c3e50;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      #hero h1 {
+        font-size: 2rem;
+      }
+
+      #hero p {
+        font-size: 1.2rem;
+      }
+
+      .card {
+        width: 100%;
+        margin: 1rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="#"><i class="fas fa-home"></i> Accueil</a>
+      <a href="#destinations"><i class="fas fa-map-marked-alt"></i> Destinations</a>
+      <a href="https://trip.tp.st/mlI0QBGs"><i class="fas fa-plane"></i> Voyage</a>
+      <a href="https://hotellook.tp.st/qJsrczod"><i class="fas fa-hotel"></i> Hôtels</a>
+      <a href="#footer"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
+  </header>
+
+  <section id="hero">
+    <div>
+      <h1>Explorez le Monde</h1>
+      <p>Découvrez des destinations incroyables à travers le globe.</p>
+      <button class="btn" onclick="window.location.href='https://hotellook.tp.st/qJsrczod'">Réserver</button>
+    </div>
+  </section>
+
+  <section id="destinations">
+    <h2>Nos Destinations</h2>
+    <div class="grid">
+      <!-- France -->
+      <div class="card">
+        <img src="https://media.istockphoto.com/id/1145422105/fr/photo/vue-a%C3%A9rienne-de-la-tour-eiffel-paris.jpg?s=612x612&w=0&k=20&c=uzZ9u2Io4B92oDVeAhyom9zDaMMrdU8HFMl29bV3opU=" alt="Paris">
+        <h3>France</h3>
+        <p>Découvrez la ville lumière et ses monuments emblématiques.</p>
+        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
+      </div>
+
+      <!-- Japon -->
+      <div class="card">
+        <img src="https://media.istockphoto.com/id/491924730/fr/photo/longue-carrefour-de-shibuya-%C3%A0-tokyo.jpg?s=612x612&w=0&k=20&c=1ImiL7_hI3cqgmmY6Kt_moSUUfdz9dXdgwshQMZck0c=" alt="Tokyo">
+        <h3>Japon</h3>
+        <p>Explorez Tokyo, Kyoto et bien plus encore.</p>
+        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
+      </div>
+
+      <!-- États-Unis -->
+      <div class="card">
+        <img src="https://media.istockphoto.com/id/525232662/fr/photo/new-york-de-lempire-%C3%A9tat-building-et-la-statue-de-la-libert%C3%A9.jpg?s=612x612&w=0&k=20&c=MXRDs-_T2Ldg6V_tuF18E2YIp2CYTEAlmntCrWbZHu8=" alt="New York">
+        <h3>États-Unis</h3>
+        <p>Visitez New York, Los Angeles et les grands parcs nationaux.</p>
+        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
+      </div>
+
+      <!-- Bali -->
+      <div class="card">
+        <img src="https://media.istockphoto.com/id/927781128/fr/photo/parasols-de-paille-et-bleu-oc%C3%A9an-sc%C3%A8ne-de-plage-den-haut.jpg?s=612x612&w=0&k=20&c=LDebavaC3nm8nRvryKF57Q5iA3NERbKvmdoGLoXmukU=" alt="Bali">
+        <h3>Bali</h3>
+        <p>Détendez-vous sur les plages de sable fin de Bali.</p>
+        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="footer">
+    <p>© 2023 Agence de Voyage - Explorez le Monde</p>
+  </footer>
+</body>
+</html>
