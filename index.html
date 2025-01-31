@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>voyage.fr</title>
+  <title>Voyage.fr</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     /* Style général */
@@ -46,13 +46,16 @@
       color: #1abc9c;
     }
 
-    header nav select {
-      background: #1abc9c;
-      color: #fff;
+    header nav button {
+      background: none;
       border: none;
-      padding: 5px;
-      border-radius: 5px;
+      color: #fff;
       cursor: pointer;
+      font-weight: bold;
+    }
+
+    header nav button:hover {
+      color: #1abc9c;
     }
 
     /* Hero section */
@@ -165,11 +168,6 @@
 
     /* Responsive */
     @media (max-width: 768px) {
-      header nav a {
-        margin: 0 10px;
-        font-size: 0.9rem;
-      }
-
       #hero h1 {
         font-size: 2rem;
       }
@@ -178,29 +176,9 @@
         font-size: 1.2rem;
       }
 
-      .grid {
-        flex-direction: column;
-        align-items: center;
-      }
-
       .card {
-        width: 90%;
+        width: 100%;
         margin: 1rem 0;
-      }
-    }
-
-    @media (max-width: 480px) {
-      header nav a {
-        display: block;
-        margin: 10px 0;
-      }
-
-      #hero h1 {
-        font-size: 1.8rem;
-      }
-
-      #hero p {
-        font-size: 1rem;
       }
     }
   </style>
@@ -208,119 +186,80 @@
 <body>
   <header>
     <nav>
-      <a href="#"><i class="fas fa-home"></i> Accueil</a>
-      <a href="#destinations"><i class="fas fa-map-marked-alt"></i> Destinations</a>
-      <a href="https://trip.tp.st/mlI0QBGs"><i class="fas fa-plane"></i> Voyage</a>
-      <a href="https://hotellook.tp.st/qJsrczod"><i class="fas fa-hotel"></i> Hôtels</a>
-      <a href="#footer"><i class="fas fa-envelope"></i> Contact</a>
-      <select onchange="changeLanguage(this.value)">
-        <option value="fr">FR</option>
-        <option value="en">EN</option>
-      </select>
+      <a href="#"><i class="fas fa-home"></i> <span data-lang="fr">Accueil</span><span data-lang="en">Home</span></a>
+      <a href="#destinations"><i class="fas fa-map-marked-alt"></i> <span data-lang="fr">Destinations</span><span data-lang="en">Destinations</span></a>
+      <a href="https://trip.tp.st/mlI0QBGs"><i class="fas fa-plane"></i> <span data-lang="fr">Voyage</span><span data-lang="en">Travel</span></a>
+      <a href="https://hotellook.tp.st/qJsrczod"><i class="fas fa-hotel"></i> <span data-lang="fr">Hôtels</span><span data-lang="en">Hotels</span></a>
+      <a href="#footer"><i class="fas fa-envelope"></i> <span data-lang="fr">Contact</span><span data-lang="en">Contact</span></a>
+      <button onclick="changeLanguage('fr')">FR</button>
+      <button onclick="changeLanguage('en')">EN</button>
     </nav>
   </header>
 
   <section id="hero">
     <div>
-      <h1 id="welcome">Explorez le Monde</h1>
-      <p id="description">Découvrez des destinations incroyables à travers le globe.</p>
-      <button class="btn" onclick="window.location.href='https://hotellook.tp.st/qJsrczod'">Réserver</button>
+      <h1><span data-lang="fr">Explorez le Monde</span><span data-lang="en">Explore the World</span></h1>
+      <p><span data-lang="fr">Découvrez des destinations incroyables à travers le globe.</span><span data-lang="en">Discover amazing destinations around the globe.</span></p>
+      <button class="btn" onclick="window.location.href='https://hotellook.tp.st/qJsrczod'"><span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span></button>
     </div>
   </section>
 
   <section id="destinations">
-    <h2 id="destinations-title">Nos Destinations</h2>
+    <h2><span data-lang="fr">Nos Destinations</span><span data-lang="en">Our Destinations</span></h2>
     <div class="grid">
       <!-- France -->
       <div class="card">
         <img src="https://media.istockphoto.com/id/1145422105/fr/photo/vue-a%C3%A9rienne-de-la-tour-eiffel-paris.jpg?s=612x612&w=0&k=20&c=uzZ9u2Io4B92oDVeAhyom9zDaMMrdU8HFMl29bV3opU=" alt="Paris">
-        <h3 id="france-title">France</h3>
-        <p id="france-desc">Découvrez la ville lumière et ses monuments emblématiques.</p>
-        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
+        <h3><span data-lang="fr">France</span><span data-lang="en">France</span></h3>
+        <p><span data-lang="fr">Découvrez la ville lumière et ses monuments emblématiques.</span><span data-lang="en">Discover the City of Light and its iconic landmarks.</span></p>
+        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'"><span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span></button>
       </div>
 
       <!-- Japon -->
       <div class="card">
         <img src="https://media.istockphoto.com/id/491924730/fr/photo/longue-carrefour-de-shibuya-%C3%A0-tokyo.jpg?s=612x612&w=0&k=20&c=1ImiL7_hI3cqgmmY6Kt_moSUUfdz9dXdgwshQMZck0c=" alt="Tokyo">
-        <h3 id="japan-title">Japon</h3>
-        <p id="japan-desc">Explorez Tokyo, Kyoto et bien plus encore.</p>
-        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
+        <h3><span data-lang="fr">Japon</span><span data-lang="en">Japan</span></h3>
+        <p><span data-lang="fr">Explorez Tokyo, Kyoto et bien plus encore.</span><span data-lang="en">Explore Tokyo, Kyoto, and much more.</span></p>
+        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'"><span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span></button>
       </div>
 
       <!-- États-Unis -->
       <div class="card">
         <img src="https://media.istockphoto.com/id/525232662/fr/photo/new-york-de-lempire-%C3%A9tat-building-et-la-statue-de-la-libert%C3%A9.jpg?s=612x612&w=0&k=20&c=MXRDs-_T2Ldg6V_tuF18E2YIp2CYTEAlmntCrWbZHu8=" alt="New York">
-        <h3 id="usa-title">États-Unis</h3>
-        <p id="usa-desc">Visitez New York, Los Angeles et les grands parcs nationaux.</p>
-        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
+        <h3><span data-lang="fr">États-Unis</span><span data-lang="en">United States</span></h3>
+        <p><span data-lang="fr">Visitez New York, Los Angeles et les grands parcs nationaux.</span><span data-lang="en">Visit New York, Los Angeles, and the great national parks.</span></p>
+        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'"><span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span></button>
       </div>
 
       <!-- Bali -->
       <div class="card">
         <img src="https://media.istockphoto.com/id/927781128/fr/photo/parasols-de-paille-et-bleu-oc%C3%A9an-sc%C3%A8ne-de-plage-den-haut.jpg?s=612x612&w=0&k=20&c=LDebavaC3nm8nRvryKF57Q5iA3NERbKvmdoGLoXmukU=" alt="Bali">
-        <h3 id="bali-title">Bali</h3>
-        <p id="bali-desc">Détendez-vous sur les plages de sable fin de Bali.</p>
-        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
+        <h3><span data-lang="fr">Bali</span><span data-lang="en">Bali</span></h3>
+        <p><span data-lang="fr">Détendez-vous sur les plages de sable fin de Bali.</span><span data-lang="en">Relax on the fine sand beaches of Bali.</span></p>
+        <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'"><span data-lang="fr">Réserver</span><span data-lang="en">Book Now</span></button>
       </div>
     </div>
   </section>
 
   <footer id="footer">
-    <p id="footer-text">© 2023 Agence de Voyage - Explorez le Monde</p>
+    <p><span data-lang="fr">© 2023 Agence de Voyage - Explorez le Monde</span><span data-lang="en">© 2023 Travel Agency - Explore the World</span></p>
   </footer>
 
   <script>
-    const translations = {
-      fr: {
-        welcome: "Explorez le Monde",
-        description: "Découvrez des destinations incroyables à travers le globe.",
-        destinations: "Nos Destinations",
-        france: "France",
-        franceDesc: "Découvrez la ville lumière et ses monuments emblématiques.",
-        japan: "Japon",
-        japanDesc: "Explorez Tokyo, Kyoto et bien plus encore.",
-        usa: "États-Unis",
-        usaDesc: "Visitez New York, Los Angeles et les grands parcs nationaux.",
-        bali: "Bali",
-        baliDesc: "Détendez-vous sur les plages de sable fin de Bali.",
-        book: "Réserver",
-        footer: "© 2023 Agence de Voyage - Explorez le Monde"
-      },
-      en: {
-        welcome: "Explore the World",
-        description: "Discover incredible destinations across the globe.",
-        destinations: "Our Destinations",
-        france: "France",
-        franceDesc: "Discover the city of light and its iconic landmarks.",
-        japan: "Japan",
-        japanDesc: "Explore Tokyo, Kyoto, and much more.",
-        usa: "United States",
-        usaDesc: "Visit New York, Los Angeles, and the great national parks.",
-        bali: "Bali",
-        baliDesc: "Relax on the sandy beaches of Bali.",
-        book: "Book Now",
-        footer: "© 2023 Travel Agency - Explore the World"
-      }
-    };
-
-    let currentLang = 'fr'; // Langue par défaut
-
     function changeLanguage(lang) {
-      currentLang = lang;
-      document.getElementById('welcome').textContent = translations[lang].welcome;
-      document.getElementById('description').textContent = translations[lang].description;
-      document.getElementById('destinations-title').textContent = translations[lang].destinations;
-      document.getElementById('france-title').textContent = translations[lang].france;
-      document.getElementById('france-desc').textContent = translations[lang].franceDesc;
-      document.getElementById('japan-title').textContent = translations[lang].japan;
-      document.getElementById('japan-desc').textContent = translations[lang].japanDesc;
-      document.getElementById('usa-title').textContent = translations[lang].usa;
-      document.getElementById('usa-desc').textContent = translations[lang].usaDesc;
-      document.getElementById('bali-title').textContent = translations[lang].bali;
-      document.getElementById('bali-desc').textContent = translations[lang].baliDesc;
-      document.querySelectorAll('.btn').forEach(btn => btn.textContent = translations[lang].book);
-      document.getElementById('footer-text').textContent = translations[lang].footer;
+      // Masquer tous les textes
+      document.querySelectorAll('[data-lang]').forEach(element => {
+        element.style.display = 'none';
+      });
+
+      // Afficher les textes de la langue sélectionnée
+      document.querySelectorAll(`[data-lang="${lang}"]`).forEach(element => {
+        element.style.display = 'inline';
+      });
     }
+
+    // Définir la langue par défaut
+    changeLanguage('fr');
   </script>
 </body>
 </html>
