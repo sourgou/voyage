@@ -46,6 +46,15 @@
       color: #1abc9c;
     }
 
+    header nav select {
+      background: #1abc9c;
+      color: #fff;
+      border: none;
+      padding: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
     /* Hero section */
     #hero {
       background: url('https://media.istockphoto.com/id/1177381806/fr/photo/concept-de-fond-de-vacances-d%C3%A9t%C3%A9-de-voyage.jpg?s=612x612&w=0&k=20&c=J3ByARrLvMhnUU5nBQR7-HEiYnOfEEDJWif_OWVYbvk=') no-repeat center center/cover;
@@ -156,6 +165,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      header nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+      }
+
       #hero h1 {
         font-size: 2rem;
       }
@@ -164,9 +178,29 @@
         font-size: 1.2rem;
       }
 
+      .grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
       .card {
-        width: 100%;
+        width: 90%;
         margin: 1rem 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      header nav a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      #hero h1 {
+        font-size: 1.8rem;
+      }
+
+      #hero p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -179,56 +213,114 @@
       <a href="https://trip.tp.st/mlI0QBGs"><i class="fas fa-plane"></i> Voyage</a>
       <a href="https://hotellook.tp.st/qJsrczod"><i class="fas fa-hotel"></i> Hôtels</a>
       <a href="#footer"><i class="fas fa-envelope"></i> Contact</a>
+      <select onchange="changeLanguage(this.value)">
+        <option value="fr">FR</option>
+        <option value="en">EN</option>
+      </select>
     </nav>
   </header>
 
   <section id="hero">
     <div>
-      <h1>Explorez le Monde</h1>
-      <p>Découvrez des destinations incroyables à travers le globe.</p>
+      <h1 id="welcome">Explorez le Monde</h1>
+      <p id="description">Découvrez des destinations incroyables à travers le globe.</p>
       <button class="btn" onclick="window.location.href='https://hotellook.tp.st/qJsrczod'">Réserver</button>
     </div>
   </section>
 
   <section id="destinations">
-    <h2>Nos Destinations</h2>
+    <h2 id="destinations-title">Nos Destinations</h2>
     <div class="grid">
       <!-- France -->
       <div class="card">
         <img src="https://media.istockphoto.com/id/1145422105/fr/photo/vue-a%C3%A9rienne-de-la-tour-eiffel-paris.jpg?s=612x612&w=0&k=20&c=uzZ9u2Io4B92oDVeAhyom9zDaMMrdU8HFMl29bV3opU=" alt="Paris">
-        <h3>France</h3>
-        <p>Découvrez la ville lumière et ses monuments emblématiques.</p>
+        <h3 id="france-title">France</h3>
+        <p id="france-desc">Découvrez la ville lumière et ses monuments emblématiques.</p>
         <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
       </div>
 
       <!-- Japon -->
       <div class="card">
         <img src="https://media.istockphoto.com/id/491924730/fr/photo/longue-carrefour-de-shibuya-%C3%A0-tokyo.jpg?s=612x612&w=0&k=20&c=1ImiL7_hI3cqgmmY6Kt_moSUUfdz9dXdgwshQMZck0c=" alt="Tokyo">
-        <h3>Japon</h3>
-        <p>Explorez Tokyo, Kyoto et bien plus encore.</p>
+        <h3 id="japan-title">Japon</h3>
+        <p id="japan-desc">Explorez Tokyo, Kyoto et bien plus encore.</p>
         <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
       </div>
 
       <!-- États-Unis -->
       <div class="card">
         <img src="https://media.istockphoto.com/id/525232662/fr/photo/new-york-de-lempire-%C3%A9tat-building-et-la-statue-de-la-libert%C3%A9.jpg?s=612x612&w=0&k=20&c=MXRDs-_T2Ldg6V_tuF18E2YIp2CYTEAlmntCrWbZHu8=" alt="New York">
-        <h3>États-Unis</h3>
-        <p>Visitez New York, Los Angeles et les grands parcs nationaux.</p>
+        <h3 id="usa-title">États-Unis</h3>
+        <p id="usa-desc">Visitez New York, Los Angeles et les grands parcs nationaux.</p>
         <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
       </div>
 
       <!-- Bali -->
       <div class="card">
         <img src="https://media.istockphoto.com/id/927781128/fr/photo/parasols-de-paille-et-bleu-oc%C3%A9an-sc%C3%A8ne-de-plage-den-haut.jpg?s=612x612&w=0&k=20&c=LDebavaC3nm8nRvryKF57Q5iA3NERbKvmdoGLoXmukU=" alt="Bali">
-        <h3>Bali</h3>
-        <p>Détendez-vous sur les plages de sable fin de Bali.</p>
+        <h3 id="bali-title">Bali</h3>
+        <p id="bali-desc">Détendez-vous sur les plages de sable fin de Bali.</p>
         <button class="btn" onclick="window.location.href='https://trip.tp.st/mlI0QBGs'">Réserver</button>
       </div>
     </div>
   </section>
 
   <footer id="footer">
-    <p>© 2023 Agence de Voyage - Explorez le Monde</p>
+    <p id="footer-text">© 2023 Agence de Voyage - Explorez le Monde</p>
   </footer>
+
+  <script>
+    const translations = {
+      fr: {
+        welcome: "Explorez le Monde",
+        description: "Découvrez des destinations incroyables à travers le globe.",
+        destinations: "Nos Destinations",
+        france: "France",
+        franceDesc: "Découvrez la ville lumière et ses monuments emblématiques.",
+        japan: "Japon",
+        japanDesc: "Explorez Tokyo, Kyoto et bien plus encore.",
+        usa: "États-Unis",
+        usaDesc: "Visitez New York, Los Angeles et les grands parcs nationaux.",
+        bali: "Bali",
+        baliDesc: "Détendez-vous sur les plages de sable fin de Bali.",
+        book: "Réserver",
+        footer: "© 2023 Agence de Voyage - Explorez le Monde"
+      },
+      en: {
+        welcome: "Explore the World",
+        description: "Discover incredible destinations across the globe.",
+        destinations: "Our Destinations",
+        france: "France",
+        franceDesc: "Discover the city of light and its iconic landmarks.",
+        japan: "Japan",
+        japanDesc: "Explore Tokyo, Kyoto, and much more.",
+        usa: "United States",
+        usaDesc: "Visit New York, Los Angeles, and the great national parks.",
+        bali: "Bali",
+        baliDesc: "Relax on the sandy beaches of Bali.",
+        book: "Book Now",
+        footer: "© 2023 Travel Agency - Explore the World"
+      }
+    };
+
+    let currentLang = 'fr'; // Langue par défaut
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      document.getElementById('welcome').textContent = translations[lang].welcome;
+      document.getElementById('description').textContent = translations[lang].description;
+      document.getElementById('destinations-title').textContent = translations[lang].destinations;
+      document.getElementById('france-title').textContent = translations[lang].france;
+      document.getElementById('france-desc').textContent = translations[lang].franceDesc;
+      document.getElementById('japan-title').textContent = translations[lang].japan;
+      document.getElementById('japan-desc').textContent = translations[lang].japanDesc;
+      document.getElementById('usa-title').textContent = translations[lang].usa;
+      document.getElementById('usa-desc').textContent = translations[lang].usaDesc;
+      document.getElementById('bali-title').textContent = translations[lang].bali;
+      document.getElementById('bali-desc').textContent = translations[lang].baliDesc;
+      document.querySelectorAll('.btn').forEach(btn => btn.textContent = translations[lang].book);
+      document.getElementById('footer-text').textContent = translations[lang].footer;
+    }
+  </script>
 </body>
 </html>
